@@ -1,14 +1,14 @@
 package com.ideas2it.hospitalmanagement.physician.model;
 
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.ideas2it.hospitalmanagement.patient.model.Patient;
 import com.ideas2it.hospitalmanagement.address.model.Address;
 import com.ideas2it.hospitalmanagement.commons.Constants;
-import com.ideas2it.hospitalmanagement.commons.enums.Gender;
+import com.ideas2it.hospitalmanagement.patient.model.Patient;
+import com.ideas2it.hospitalmanagement.utils.DateUtil;
 
 public class Physician {
 
@@ -19,10 +19,10 @@ public class Physician {
 	private Long mobileNumber;
     private String email;
     private Address address;
-    private Gender gender;
+    private String gender;
 	private String specialisation;
 	private List<Patient> patients;
-	private Boolean active;
+	private boolean active;
 	private Integer userId;
 
 	public Integer getId() {
@@ -68,10 +68,10 @@ public class Physician {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	public Gender getGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(Gender gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public String getSpecialisation() {
@@ -86,10 +86,10 @@ public class Physician {
 	public void setPatients(List<Patient> patients) {
 		this.patients = patients;
 	}
-	public Boolean getActive() {
+	public boolean isActive() {
 		return active;
 	}
-	public void setActive(Boolean active) {
+	public void setActive(boolean active) {
 		this.active = active;
 	}
 	public Integer getUserId() {
@@ -97,5 +97,8 @@ public class Physician {
 	}
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+	public Integer getAge() {	
+	    return DateUtil.getYearDifference(this.birthDate);
 	}
 }

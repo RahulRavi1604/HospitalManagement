@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.ideas2it.hospitalmanagement.address.model.Address;
 import com.ideas2it.hospitalmanagement.commons.Constants;
+import com.ideas2it.hospitalmanagement.commons.enums.Role;
 
 /**
  * User class is the Entity class is having the getters and setter methods
